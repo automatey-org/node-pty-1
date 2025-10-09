@@ -8,7 +8,6 @@
     # Pass --format=make to gyp to generate a Makefile instead.  The Makefile
     # can be configured by passing variables to make, e.g.:
     #    make -j4 CXX=i686-w64-mingw32-g++ LDFLAGS="-static -static-libgcc -static-libstdc++"
-
     'variables': {
         'WINPTY_COMMIT_HASH%': '<!(cmd /c "cd shared && GetCommitHash.bat")',
     },
@@ -41,7 +40,6 @@
                 '-luser32',
             ],
             'msvs_configuration_attributes': {
-                'SpectreMitigation': 'Spectre'
             },
             'msvs_settings': {
                 # Specify this setting here to override a setting from somewhere
@@ -143,7 +141,6 @@
                 '-luser32',
             ],
             'msvs_configuration_attributes': {
-                'SpectreMitigation': 'Spectre'
             },
             'msvs_settings': {
                 # Specify this setting here to override a setting from somewhere

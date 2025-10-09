@@ -206,7 +206,7 @@ export class WindowsPtyAgent {
       const agent = fork(path.join(__dirname, 'conpty_console_list_agent'), [ this._innerPid.toString() ]);
       agent.on('message', message => {
         clearTimeout(timeout);
-        resolve(message.consoleProcessList);
+        resolve((message as any).consoleProcessList);
       });
       const timeout = setTimeout(() => {
         // Something went wrong, just send back the shell PID
@@ -253,7 +253,7 @@ export class WindowsPtyAgent {
       return;
     }
     if (this._closeTimeout) {
-      clearTimeout(this._closeTimeout);
+      clearTimeout(this._closeTimeout as any);
     }
     this._closeTimeout = setTimeout(() => this._cleanUpProcess(), FLUSH_DATA_INTERVAL);
   }

@@ -6,7 +6,6 @@
     'conditions': [
       ['OS=="win"', {
         'msvs_configuration_attributes': {
-          'SpectreMitigation': 'Spectre'
         },
         'msvs_settings': {
             'VCCLCompilerTool': {
